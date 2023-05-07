@@ -121,6 +121,13 @@ class CreatePermissionTables extends Migration
             'model_id' => 1
         ]);
 
+        
+        DB::table('roles')->insertOrIgnore([
+            'name' => 'Admin',
+            'guard_name' => 'web',
+            'created_at' => now()
+        ]);
+
         app('cache')
             ->store(config('permission.cache.store') != 'default' ? config('permission.cache.store') : null)
             ->forget(config('permission.cache.key'));
