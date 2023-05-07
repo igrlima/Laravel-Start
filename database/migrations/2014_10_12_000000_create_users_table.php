@@ -21,6 +21,12 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        DB::table('users')->insertOrIgnore([
+            'name' => 'Admin',
+            'username' => 'admin',
+            'password' => bcrypt(config('123456'))
+        ]);
     }
 
     /**
