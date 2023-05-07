@@ -25,7 +25,7 @@ return new class extends Migration
         DB::table('users')->insertOrIgnore([
             'name' => 'Admin',
             'username' => 'admin',
-            'password' => bcrypt(config('123456'))
+            'password' => bcrypt('123456')
         ]);
     }
 
